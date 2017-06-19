@@ -1,9 +1,3 @@
-/*
-Mayra Lucero García Ramírez
-Facultad de Ingeniería UASLP
-15/06/17
-
-*/
 
 <?php
 require('fpdf.php');
@@ -162,21 +156,21 @@ $pdf->SetFont('Arial','',7);
 $pdf->Text($pdf->GetX(),$pdf->GetY(),$text);
 $pdf->SetFont('Arial','',$tamFuente);
 $pdf->SetY($pdf->GetY()+1);
-$text=utf8_decode('Tipo de Actualización');
+$text=utf8_decode('Actividad o puesto');
 $pdf->Cell($width,$hTitulo,$text,1,0,'C');
-$text=utf8_decode('Institución y país');
+$text=utf8_decode('Institución');
 $pdf->Cell($width,$hTitulo,$text,1,0,'C');
-$text=utf8_decode('Año de obtención');
+$text=utf8_decode('De: (mes y año)');
 $pdf->Cell($width/2,$hTitulo,$text,1,0,'C');
-$text=utf8_decode('Horas');
+$text=utf8_decode('A: (mes y año)');
 $pdf->Cell($width/2,$hTitulo,$text,1,1,'C');
 $text=utf8_decode(' ');
-for ($i = 1; $i <= 4; $i++) {
-    $pdf->Cell($width,$hEspacio ,$text,1,0,'C');
-    $pdf->Cell($width,$hEspacio ,$text,1,0,'C');
-    $pdf->Cell($width/2,$hEspacio,$text,1,0,'C');
-    $pdf->Cell($width/2,$hEspacio,$text,1,1,'C');
-}
+
+$pdf->Cell($width,$hEspacio ,$text,1,0,'C');
+$pdf->Cell($width,$hEspacio ,$text,1,0,'C');
+$pdf->Cell($width/2,$hEspacio,$text,1,0,'C');
+$pdf->Cell($width/2,$hEspacio,$text,1,1,'C');
+
 
 /*Separación entre Sección*/ 
 $pdf->Ln(); 
